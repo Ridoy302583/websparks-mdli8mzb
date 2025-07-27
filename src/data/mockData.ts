@@ -1,0 +1,138 @@
+import { Post, User } from '../types';
+
+export const mockUsers: User[] = [
+  {
+    id: '1',
+    name: 'John Doe',
+    email: 'john.doe@example.com',
+    avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face',
+    isOnline: true,
+  },
+  {
+    id: '2',
+    name: 'Sarah Johnson',
+    email: 'sarah.johnson@example.com',
+    avatar: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face',
+    isOnline: true,
+  },
+  {
+    id: '3',
+    name: 'Mike Chen',
+    email: 'mike.chen@example.com',
+    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face',
+    isOnline: false,
+  },
+  {
+    id: '4',
+    name: 'Emily Davis',
+    email: 'emily.davis@example.com',
+    avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face',
+    isOnline: true,
+  },
+];
+
+export const mockPosts: Post[] = [
+  {
+    id: '1',
+    author: mockUsers[1],
+    content: 'Just finished an amazing hike in the mountains! The view was absolutely breathtaking. Nature never fails to inspire me. 🏔️ #hiking #nature #adventure',
+    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop',
+    timestamp: new Date(Date.now() - 2 * 60 * 60 * 1000).toISOString(),
+    likes: 24,
+    shares: 3,
+    isLiked: false,
+    comments: [
+      {
+        id: '1',
+        author: mockUsers[2],
+        content: 'Wow, that looks incredible! Which trail did you take?',
+        timestamp: new Date(Date.now() - 1 * 60 * 60 * 1000).toISOString(),
+        likes: 2,
+        isLiked: false,
+      },
+      {
+        id: '2',
+        author: mockUsers[0],
+        content: 'Beautiful shot! I need to get back into hiking.',
+        timestamp: new Date(Date.now() - 30 * 60 * 1000).toISOString(),
+        likes: 1,
+        isLiked: true,
+      },
+    ],
+  },
+  {
+    id: '2',
+    author: mockUsers[2],
+    content: 'Excited to share that I just launched my new web development project! It has been months of hard work, but seeing it come to life is incredibly rewarding. Thanks to everyone who supported me along the way! 🚀💻',
+    timestamp: new Date(Date.now() - 4 * 60 * 60 * 1000).toISOString(),
+    likes: 42,
+    shares: 8,
+    isLiked: true,
+    comments: [
+      {
+        id: '3',
+        author: mockUsers[3],
+        content: 'Congratulations! Can you share the link?',
+        timestamp: new Date(Date.now() - 3 * 60 * 60 * 1000).toISOString(),
+        likes: 3,
+        isLiked: false,
+      },
+      {
+        id: '4',
+        author: mockUsers[1],
+        content: 'Amazing work! Your dedication really shows.',
+        timestamp: new Date(Date.now() - 2 * 60 * 60 * 1000).toISOString(),
+        likes: 5,
+        isLiked: true,
+      },
+    ],
+  },
+  {
+    id: '3',
+    author: mockUsers[3],
+    content: 'Sunday brunch with the family! Nothing beats homemade pancakes and good company. Hope everyone is having a wonderful weekend! 🥞☕️',
+    image: 'https://images.unsplash.com/photo-1551218808-94e220e084d2?w=600&h=400&fit=crop',
+    timestamp: new Date(Date.now() - 6 * 60 * 60 * 1000).toISOString(),
+    likes: 18,
+    shares: 2,
+    isLiked: false,
+    comments: [
+      {
+        id: '5',
+        author: mockUsers[0],
+        content: 'Those pancakes look delicious! Recipe please? 😍',
+        timestamp: new Date(Date.now() - 5 * 60 * 60 * 1000).toISOString(),
+        likes: 4,
+        isLiked: false,
+      },
+    ],
+  },
+  {
+    id: '4',
+    author: mockUsers[0],
+    content: 'Reading is one of life\'s greatest pleasures. Just finished this amazing book and I can\'t stop thinking about it. What are you all reading these days? Drop your recommendations below! 📚✨',
+    image: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=600&h=400&fit=crop',
+    timestamp: new Date(Date.now() - 8 * 60 * 60 * 1000).toISOString(),
+    likes: 31,
+    shares: 5,
+    isLiked: true,
+    comments: [
+      {
+        id: '6',
+        author: mockUsers[2],
+        content: 'I just started "The Seven Husbands of Evelyn Hugo" - highly recommend!',
+        timestamp: new Date(Date.now() - 7 * 60 * 60 * 1000).toISOString(),
+        likes: 6,
+        isLiked: true,
+      },
+      {
+        id: '7',
+        author: mockUsers[3],
+        content: 'Love seeing book recommendations! Adding this to my reading list.',
+        timestamp: new Date(Date.now() - 6 * 60 * 60 * 1000).toISOString(),
+        likes: 2,
+        isLiked: false,
+      },
+    ],
+  },
+];
